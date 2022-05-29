@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1 {
+            background-color: burlywood;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            left: 0;
+        }
+        
+        #box2 {
+            background-color: rgb(138, 226, 252);
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            left: 0;
+            top: 300px;
+        }
+    </style>
+    <script src="./tool.js"></script>
+    <script>
+        // window.onload = function(){};
+        window.onload = function(){
+            
+
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2" );
+        var btn01 = document.getElementById("btn01");
+        var btn02 = document.getElementById("btn02");
+        var btn03 = document.getElementById("btn03");
+        var btn04 = document.getElementById("btn04");
+        var timer;
+        btn01.onclick = function () {
+            // clearInterval(timer);
+            // timer = setInterval(function () {
+            //     var oldValue = parseInt(getStyle(box1, "left"));
+
+            //     var newValue = oldValue + 10;
+            //     if (newValue > 800) {
+            //         newValue = 800;
+            //     }
+            //     box1.style.left = newValue + "px";
+
+            //     if (newValue == 800) {
+            //         clearInterval(timer);
+            //     }
+            // }, 30);
+            move(box1 ,"left", 800 ,10)
+
+        };
+
+        btn02.onclick = function () {
+           move(box1, "left" , 0 , 10)
+
+        };
+
+        btn03.onclick = function(){
+            move(box2, "left" , 800 ,10)
+
+        };
+
+        btn04.onclick = function(){
+// 用双引号包起来""
+// 回调函数可以套娃
+            move(box2,"width",800,10 ,function(){
+                move(box2,"height",300,10 ,function(){
+            
+        })
+            })
+        };
+        
+
+
+
+        };
+        
+    </script>
+</head>
+
+<body>
+
+    <button id="btn01">点击向右移动</button>
+    <button id="btn02">点击向左移动</button>
+    <button id="btn03">点击向you移动</button>
+    <button id="btn04">测试</button>
+
+    <br><br>
+
+    <div id="box1"></div>
+
+
+    <br><br>
+
+    <div id="box2"></div>
+</body>
+
+</html>

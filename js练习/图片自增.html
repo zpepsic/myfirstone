@@ -1,0 +1,63 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script>
+         window.onload = function(){
+
+            var img1 = document.getElementById("img1");
+            //  
+            var arr = ["./img1.jpg","./wk.png","./dt.png"];
+
+            var index = 0;
+            var timer ; 
+            var btn01 = document.getElementById("btn01");
+            // 注意getElementById中的   引 号  
+            btn01.onclick = function(){
+                clearInterval(timer);
+                timer = setInterval(function()
+            {
+                index++;
+
+                if(index >= arr.length){
+                    index = 0;
+                }
+
+                // index = index % arr.length;
+                // index %= arr.length;
+                img1.src = arr[index];
+
+            },1000);
+            // 1000  ms  = 1s
+           
+         
+            };
+            
+            var btn02 = document.getElementById ("btn02");
+
+            // 这里document拼成了docement浪费了半个多小时！！！
+            
+
+
+
+
+         btn02.onclick = function(){
+             clearInterval(timer);
+         };
+
+         };
+         
+     </script>
+ </head>
+ <body>
+     <img id = "img1" src="./img1.jpg" alt="">
+
+     <br><br>
+     <button id="btn01">begin</button>
+     <br>
+     <button id="btn02">end</button>
+ </body>
+ </html>
