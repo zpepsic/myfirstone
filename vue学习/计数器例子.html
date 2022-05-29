@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click = " sub">-</button>
+        <span>{{ number }}</span>
+        <button @click = "add">+</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 创建vue语法    new Vue({})    花括号在小括号里边
+        // Vue里边的数据data与methods语法    data:{},    methods:{}, 1.不能忘记冒号 2.注意用英文的符号
+        new Vue({
+            el:"#app",
+            // 挂载id记得加#
+           data:{
+             number:0,
+           },
+            methods:{
+                // 先()再{内容}
+                add(){
+                    this.number++
+                },
+                sub(){
+                    if(this.number > 0){
+                        this.number--
+                    }
+                    
+                },
+            },
+
+        })
+    </script>
+</body>
+</html>
